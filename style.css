@@ -7,7 +7,7 @@
     /* font-weight: 900; */
     font-style: normal;
     /* box-sizing: border-box; */
-
+color: white;
 }
 body {
     min-height: 100vh;
@@ -42,6 +42,59 @@ width: 100%;
     transition: 0.3s;
     z-index: 999;
 }
+.navi{
+    margin: 70px 0px 0px 0px;
+    width: 100%;
+    height: 90%;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.199);
+    
+}
+.navigation {
+    
+ width: 200px;
+   
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+    position: relative;
+  }
+
+  .nav-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    display: block;
+    padding: 1px 0;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+  }
+
+  .nav-link.active {
+    color: #fff;
+  }
+
+  .indicator {
+    position: absolute;
+    left: -20px;
+    width: 3px;
+    height: 25px;
+    background: #00ff00;
+    border-radius: 3px;
+    transition: transform 0.3s;
+  }
+ 
 #menu-toggle:checked ~ .sidebar {
     right: 0;
 }
@@ -54,33 +107,36 @@ width: 100%;
     display: grid;
 min-width: 100%;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6 , 100px);
    /* background: red; */
    height: 100%;
 }
 .container .title {
-    grid-column: 2 / -1;
-   padding: 13rem 0 0 0;
+    grid-column: 2 / 6;
+    grid-row: 3/4;
+   /* padding: 13rem 0 0 0; */
 }
 .container .title h3{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 2rem;
-font-size: clamp(2rem, 0.7179487179487178rem + 5.47008547008547vw, 4rem);
+    font-size: 3rem;
+    font-size: clamp(3rem, 2.358974358974359rem + 2.735042735042735vw, 4rem);
     font-weight: bold ;
 background-image: linear-gradient(43deg, rgb(255, 255, 255) , rgba(241, 230, 220, 0.952) 46% );
 -webkit-background-clip: text;
 color: transparent;
 }
 .container .title p{
+padding-top: 30px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.5rem;
-font-size: clamp(0.5rem, -0.14102564102564108rem + 2.735042735042735vw, 1.5rem);
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.9871794871794872rem + 2.188034188034188vw, 2.3rem);
     color: white;
     font-weight: normal;
 }
 .container .title p span{
     font-weight: normal;
-    font-size: 0.5rem;
-    font-size: clamp(0.5rem, -0.14102564102564108rem + 2.735042735042735vw, 1.5rem);
+    font-size: 1.5rem;
+font-size: clamp(1.5rem, 0.9871794871794872rem + 2.188034188034188vw, 2.3rem);
     text-decoration: underline;
     text-decoration-color: rgb(2, 255, 2);
     text-underline-offset: 8px;
@@ -90,30 +146,20 @@ font-size: clamp(0.5rem, -0.14102564102564108rem + 2.735042735042735vw, 1.5rem);
     color: aliceblue;
 /* background: red; */
 grid-column: 2 / -1;
+grid-row: 5/6;
 height: 6rem;
+padding-top: 1.5rem;
 }
 .list ul{
     display: flex;
-    padding: 3rem 0 0 0rem;
+    /* padding: 3rem 0 0 0rem; */
     gap: 30px;
     font-size: 1.1rem;
     font-weight: 700;
    
 }
-.icon-home {
-    position: relative;
-    transition: 0.3s;
 
-} 
-li .icon-home::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50%; /* Half width of text */
-    height: 2px;
-    background-color: green;
-}
+
 .list ul li:hover{
     opacity: 100%;
 }
@@ -142,10 +188,10 @@ opacity: 0;
 }
 .icons{
    grid-column: 2 / -1;
+   grid-row: 6/8;
     color: white;
 font-size: 1.3rem;
     width: 35%;
-    padding: 40px 0 0 40px;
     height: 5rem;
     /* background-color: red; */
 }
@@ -182,23 +228,26 @@ font-size: 1.3rem;
     .list ul{
         display: none;
     }
-   .title h3{
+.icons{
+    grid-row: 5/6;
+    padding-top: 4rem;
 
-   }
-   /* .title p{ */
-    padding-top: 30px;
-    padding-left: 120px;
-    height: 90px;
-   }
-   /* .icons{
-    width: 89%;
-    position: relative;
-    left: 220px;
-   } */
+}
+
+   
+  
+   
 }
 @media (max-width:40em){
     body{
         background:url(retouch_2025011212255468.jpg) center no-repeat fixed ;
         background-size: cover ;
         }
+        .icons{
+            grid-row: 6/7;
+        }
+        .icons ul .icon-logo{
+            padding: 0 0px 0 20px;
+        }
+        
     }

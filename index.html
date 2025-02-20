@@ -16,24 +16,20 @@
      </label>
     <!-- sidebar -->
      <div class="sidebar">
+        <div class="navi">
         <nav class="navigation">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul class="nav-links">
+                <div class="indicator"></div>
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
             </ul>
         </nav>
-        <div class="social-icons">
-            <ul>
-                <li><a href="https://www.instagram.com/barbara._.vip"><i class='bx bxl-instagram'></i></a></li>
-                <li><a href="https://www.facebook.com"><i class='bx bxl-facebook-circle'></i></a></li>
-                <li><a href="https://www.snapchat.com"><i class='bx bxl-snapchat'></i></a></li>
-                <li><a href="https://discord.gg"><i class='bx bxl-discord-alt'></i></a></li>
-            </ul>
-        </div>
+       
+    </div>
      </div>
     <!-- main content -->
     <div class="container">
@@ -43,7 +39,7 @@
         </div>
         <div class="list">
             <ul>
-                <li class="icon-home"><a href="#">Home</a></li>
+                <li class="icon"><a href="#">Home</a></li>
                 <li class="icon"><a href="#">About</a></li>
                 <li class="icon"><a href="#">Resume</a></li>
                 <li class="icon"><a href="#">Services</a></li>
@@ -61,7 +57,28 @@
             </ul>
         </div>
     </div>
-
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const indicator = document.querySelector('.indicator');
+    
+        navLinks.forEach((link, index) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add active class to clicked link
+            link.classList.add('active');
+            
+            // Move indicator
+            indicator.style.transform = `translateY(${index * 45}px)`;
+          });
+        });
+    
+        // Set initial active state
+        navLinks[0].classList.add('active');
+      </script>
 
 </body>
 </html>
